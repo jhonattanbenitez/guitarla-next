@@ -4,6 +4,7 @@ export default function Home() {
     <>
       <h2>Hello world</h2>
       <Link href="/about-us">About Us</Link>
+      a que no
     </>
   );
 }
