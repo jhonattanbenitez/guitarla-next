@@ -1,5 +1,7 @@
 
 import Head from "next/head"
+import Header from "./header"
+import Footer from "./footer"
 function Layout({children, title = '', description = ''}) {
   return (
     <>
@@ -7,8 +9,9 @@ function Layout({children, title = '', description = ''}) {
             <title>{`GuitarLa - ${title}`}</title>
             <meta  name="description" content={description}/>
         </Head>
-        <h2>DesdeLayout</h2>
+        <Header />
         {children}
+        <Footer />
     </>
   )
 }
