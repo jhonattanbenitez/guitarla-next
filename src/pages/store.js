@@ -23,7 +23,6 @@ export async function getServerSideProps() {
 }
 
 export default function Store({ guitars }) {
-  console.log(guitars)
   return (
     <>
       <Layout title="Store" description="Store, Guitar La Music Store">
