@@ -58,6 +58,10 @@ export default function Product({ guitar }) {
         <h3>{name}</h3>
         <p className={styles.description}>{description}</p>
         <h3 className={styles.price}>${price}</h3>
+        <form>
+          <label htmlFor="quantity">Quantity</label>
+         <select id=""></select> 
+        </form>
       </div>
     </div>
     </Layout>
