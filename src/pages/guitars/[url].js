@@ -60,7 +60,7 @@ export default function Product({ guitar }) {
         <h3 className={styles.price}>${price}</h3>
         <form>
           <label htmlFor="quantity">Quantity</label>
-         <select id=""></select> 
+         <select id="">Option</select> 
         </form>
       </div>
     </div>
