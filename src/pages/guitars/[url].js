@@ -61,6 +61,7 @@ export default function Product({ guitar }) {
         <form>
           <label htmlFor="quantity">Quantity</label>
          <select id="">Option</select> 
+         <select id="">Option</select> 
         </form>
       </div>
     </div>
