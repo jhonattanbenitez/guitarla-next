@@ -56,4 +56,46 @@
 .link:hover {
   background-color: var(--primary);
 }
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+
+.form label {
+  font-size: 2.2rem;
+}
+
+.form select {
+  border: 1px solid var(--black);
+  padding: 0.5 rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form input[type="submit"] {
+  display: block;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+}
+
+.form input[type="submit"]:hover {
+  background-color: var(--black);
+  cursor: pointer;
+  color: var(--white);
+}
 /*# sourceMappingURL=guitar.module.css.map */
