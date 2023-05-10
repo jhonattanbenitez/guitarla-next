@@ -42,6 +42,7 @@ export async function getStaticProps({ params: { url } }) {
 export default function Product({ guitar }) {
   const [quantity, setQuantity] = useState(0);
   const { name, description, price, image } = guitar[0].attributes;
+  console.log(quantity);
 
   const handleSubmit = (e) => {
     e.preventDefault();
