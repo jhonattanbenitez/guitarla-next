@@ -57,7 +57,8 @@ export default function Product({ guitar }) {
       price,
       quantity,
     };
-    console.log(selectedGuitar);
+    // Using context
+    
   };
   return (
     <Layout title={`Guitar Store - ${name}`} description={description}>
