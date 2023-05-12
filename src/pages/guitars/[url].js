@@ -39,10 +39,9 @@ export async function getStaticProps({ params: { url } }) {
     },
   };
 }
-export default function Product({ guitar }) {
+export default function Product({ guitar, addToCart }) {
   const [quantity, setQuantity] = useState(0);
   const { name, description, price, image } = guitar[0].attributes;
-  console.log(quantity);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,8 +56,8 @@ export default function Product({ guitar }) {
       price,
       quantity,
     };
-    // Using context
-    
+    addToCart(selectedGuitar);
+
   };
   return (
     <Layout title={`Guitar Store - ${name}`} description={description}>
