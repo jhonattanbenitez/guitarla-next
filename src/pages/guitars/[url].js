@@ -12,7 +12,7 @@ import { useState } from 'react';
            guitar 
         }
     }
-} */
+} another type of get props*/
 
 export async function getStaticPaths() {
   const response = await fetch('http://localhost:1337/api/guitars');
