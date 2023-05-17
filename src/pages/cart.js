@@ -1,23 +1,43 @@
-import Layout from "../../components/layout"
-import styles from '../styles/cart.module.css'
+import Layout from '../../components/layout';
+import styles from '../styles/cart.module.css';
+import Image from 'next/image';
 
-
-
-export default function Cart() {
+export default function Cart({ cart }) {
   return (
     <Layout title="shopping cart">
-        <main className="container">
-            <h1 className="heading">Cart</h1>
-            <div className={styles.content}>
-                <div>
-                    <h2>Articles</h2>
+      <main className="container">
+        <h1 className="heading">Cart</h1>
+        <div className={styles.content}>
+          <div>
+            <h2>Articles</h2>
+            {cart.lenght === 0 ? (
+              <p>Your cart is empty</p>
+            ) : (
+              cart.map((product) => (
+                <div key={product.id} className={styles.product}>
+                  <div>
+                    <Image
+                      width={250}
+                      height={480}
+                      src={product.image}
+                      alt={product.name}
+                    />
+                  </div>
+                  <div>
+                    <p className={styles.name}>{product.name}</p>
+                    <p className={styles.price}>$<span>{product.price}</span></p>
+                    <p className={styles.subtotal}>Subtotal: $<span>{product.quantity * product.price}</span></p>
+                  </div>
                 </div>
-                <aside className={styles.summary}>
-                    <h3>Your order</h3>
-                    <p>total</p>
-                </aside>
-            </div>
-        </main>
+              ))
+            )}
+          </div>
+          <aside className={styles.summary}>
+            <h3>Your order</h3>
+            <p>total</p>
+          </aside>
+        </div>
+      </main>
     </Layout>
-  )
+  );
 }
