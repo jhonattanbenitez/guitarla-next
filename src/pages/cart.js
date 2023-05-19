@@ -26,7 +26,7 @@ export default function Cart({ cart }) {
                   <div>
                     <p className={styles.name}>{product.name}</p>
                     <div className={styles.quantity}>
-                      <label htmlFor="quantity">Quantity: </label>
+                      <p>Quantity: </p>
                       <select
                        styles
                       >
