@@ -28,7 +28,6 @@ export default function Cart({ cart }) {
                     <div className={styles.quantity}>
                       <p>Quantity: </p>
                       <select
-                       styles
                       >
                         <option value="1">1</option>
                         <option value="2">2</option>
