@@ -49,7 +49,7 @@ export default function Cart({ cart }) {
           </div>
           <aside className={styles.summary}>
             <h3>Your order</h3>
-            <p>total</p>
+            <p>total: </p>
           </aside>
         </div>
       </main>
