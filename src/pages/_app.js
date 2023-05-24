@@ -1,8 +1,19 @@
 import '@/styles/globals.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App({ Component, pageProps }) {
-  const [cart, setCart] = useState([]);
+  const cartLS =
+    typeof window !== 'undefined'
+      ? JSON.parse(localStorage.getItem('cart')) ?? []
+      : [];
+  const [cart, setCart] = useState(cartLS);
+  const [pageReady, setPageReady] = useState(false);
+  useEffect(() => {
+    setPageReady(true);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (guitar) => {
     // Check if the guiter exists
@@ -40,5 +51,13 @@ export default function App({ Component, pageProps }) {
     window.localStorage.setItem('cart', JSON.stringify(cart));
   };
 
-  return <Component {...pageProps} cart={cart} addToCart={addToCart} deleteProduct={deleteProduct} updateQuantity={updateQuantity}  />;
+  return pageReady ? (
+    <Component
+      {...pageProps}
+      cart={cart}
+      addToCart={addToCart}
+      deleteProduct={deleteProduct}
+      updateQuantity={updateQuantity}
+    />
+  ) : null;
 }
