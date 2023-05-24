@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react';
 import Layout from '../../components/layout';
 import styles from '../styles/cart.module.css';
 import Image from 'next/image';
 
-export default function Cart({ cart }) {
+export default function Cart({ cart, updateQuantity }) {
+     const [total, setTotal] = useState(0);
+
+     useEffect(() => {
+        const totalCalc = cart.reduce((total, product) => total + (product.quantity * product.price), 0);
+        setTotal(totalCalc);
+     }, [cart]);
+
   return (
     <Layout title="shopping cart">
       <main className="container">
@@ -28,6 +36,14 @@ export default function Cart({ cart }) {
                     <div className={styles.quantity}>
                       <p>Quantity: </p>
                       <select
+                        className={styles.select}
+                        onChange={(e) =>
+                          updateQuantity({
+                            id: product.id,
+                            quantity: e.target.value,
+                          })
+                        }
+                        value={product.quantity}
                       >
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -49,7 +65,7 @@ export default function Cart({ cart }) {
           </div>
           <aside className={styles.summary}>
             <h3>Your order</h3>
-            <p>total: </p>
+            <p>total: ${total}</p>
           </aside>
         </div>
       </main>

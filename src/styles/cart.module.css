@@ -59,5 +59,17 @@
   background-color: #f9fafb;
   padding: 3rem;
   border-radius: 0.5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3rem;
+}
+
+.select {
+  all: unset;
+  border: 1px solid var(--black);
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 100%;
 }
 /*# sourceMappingURL=cart.module.css.map */
