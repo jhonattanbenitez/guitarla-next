@@ -19,8 +19,7 @@ export async function getServerSideProps({ query: { url } }) {
 export default function Post({ post }) {
   const { title, content, image, publishedAt } = post[0].attributes;
   return (
-    <Layout title={title}
-      description={content}>
+    <Layout title={title} description={content}>
       <article className={`${styles.post} ${styles['mt-3']}`}>
         <Image
           src={image.data.attributes.url}
