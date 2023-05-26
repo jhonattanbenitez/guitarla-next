@@ -57,7 +57,6 @@ export default function Product({ guitar, addToCart }) {
       quantity,
     };
     addToCart(selectedGuitar);
-
   };
   return (
     <Layout title={`Guitar Store - ${name}`} description={description}>

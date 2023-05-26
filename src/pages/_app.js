@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
   }, [cart]);
 
   const addToCart = (guitar) => {
-    // Check if the guiter exists
+    // Check if the guitar exists
     if (cart.some((guitarState) => guitarState.id === guitar.id)) {
       // Loop to update the Cart
       const updatedCart = cart.map((guitarState) => {

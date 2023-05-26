@@ -4,12 +4,15 @@ import styles from '../styles/cart.module.css';
 import Image from 'next/image';
 
 export default function Cart({ cart, updateQuantity, deleteProduct }) {
-     const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
-     useEffect(() => {
-        const totalCalc = cart.reduce((total, product) => total + (product.quantity * product.price), 0);
-        setTotal(totalCalc);
-     }, [cart]);
+  useEffect(() => {
+    const totalCalc = cart.reduce(
+      (total, product) => total + product.quantity * product.price,
+      0
+    );
+    setTotal(totalCalc);
+  }, [cart]);
 
   return (
     <Layout title="shopping cart">
@@ -59,7 +62,12 @@ export default function Cart({ cart, updateQuantity, deleteProduct }) {
                       Subtotal: $<span>{product.quantity * product.price}</span>
                     </p>
                   </div>
-                  <button className={styles.delete} onClick={() => deleteProduct(product.id)}>X</button>
+                  <button
+                    className={styles.delete}
+                    onClick={() => deleteProduct(product.id)}
+                  >
+                    X
+                  </button>
                 </div>
               ))
             )}
