@@ -3,7 +3,7 @@ import styles from '../../styles/guitar.module.css';
 import Layout from '../../../components/layout';
 import { useState } from 'react';
 
-/*export async function getServerSideProps({query: {url}}) {
+/* export async function getServerSideProps({query: {url}}) {
     const response = await fetch(`http://localhost:1337/api/guitars?filters[url]=${url}&populate=image`);
     const {data: guitar} = await response.json();
 
@@ -12,7 +12,7 @@ import { useState } from 'react';
            guitar 
         }
     }
-} another type of get props*/
+} another type of get props */
 
 export async function getStaticPaths() {
   const response = await fetch('http://localhost:1337/api/guitars');
